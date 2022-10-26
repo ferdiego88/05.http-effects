@@ -1,4 +1,8 @@
 .nav-link {
+  color: gray;
+}
+
+.nav-link.active {
   color: white;
 }
 
