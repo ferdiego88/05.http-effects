@@ -1,5 +1,16 @@
-<ul>
-  <li *ngFor="let usuario of listaUsuarios">
-    {{ usuario.first_name }}
-  </li>
-</ul>
+<div class="row row-cols-sm-1 row-cols-md-3 row-cols-lg-4">
+  <div *ngFor="let usuario of listaUsuarios" class="col">
+    <div class="card">
+      <img [src]="usuario.avatar" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"> {{usuario.first_name}}  {{usuario.last_name}} </h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to..</p>
+        <div class="card-text">
+            <span class="text-muted">
+              ID: {{usuario.id}}
+            </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
