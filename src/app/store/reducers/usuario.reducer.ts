@@ -4,7 +4,7 @@ import { cargarUsuario, cargarUsuarioSuccess,cargarUsuarioError } from '../actio
 
 export interface UsuarioState {
     id      : string,
-    user    : Usuario | null,
+    user    : Usuario,
     loaded  : boolean,
     loading : boolean,
     error   : any
@@ -12,7 +12,13 @@ export interface UsuarioState {
 
 export const UsuarioinitialState: UsuarioState = {
     id       : '',
-    user     : null,
+    user     : {
+      id: 0,
+      first_name: '',
+      last_name: '',
+      avatar: '',
+      email: ''
+    },
     loaded   : false,
     loading  : false,
     error    : null

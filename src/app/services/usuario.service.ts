@@ -10,7 +10,7 @@ export class UsuarioService {
 
   constructor(private http: HttpClient) { }
 
-  private BASE_URL = 'https://reqres.ins/api'
+  private BASE_URL = 'https://reqres.in/api'
 
   getUsers():Observable<Usuario[]> {
     return this.http.get<Usuario[]>(`${this.BASE_URL}/users`)
