@@ -18,4 +18,13 @@ export class UsuarioService {
         map((response:any) => response.data)
      )
   }
+
+  getUser(id: string):Observable<Usuario> {
+    return this.http.get<Usuario>(`${this.BASE_URL}/users/${id}`)
+     .pipe(
+        map((response:any) => response.data)
+     )
+  }
+
+
 }
