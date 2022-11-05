@@ -13,11 +13,17 @@ export class ListaComponent implements OnInit {
 
   constructor(private store: Store<AppState>) { }
 
+  public loading = false;
+  public error:any;
   listaUsuarios:Usuario[] = [];
 
   ngOnInit(): void {
 
-    this.store.select('usuarios').subscribe(({users}) => this.listaUsuarios = users )
+    this.store.select('usuarios').subscribe(({users,loading,error}) => {
+      this.listaUsuarios = users;
+      this.loading = loading;
+      this.error = error;
+    } )
 
     this.store.dispatch(cargarUsuarios());
   }
